@@ -1,0 +1,17 @@
+{
+  "name": "api-automation-belajar-bareng",
+  "version": "1.0.0",
+  "description": "API Automation using Mocha",
+  "type": "module",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "report": "mocha --reporter mochawesome --reporter-options reportDir=report,reportFilename=report"
+  },
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "node-fetch": "^3.3.2"
+  }
+}

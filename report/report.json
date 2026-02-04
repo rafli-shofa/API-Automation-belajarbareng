@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-04T23:11:32.103Z",
+    "end": "2026-02-04T23:11:33.544Z",
+    "duration": 1441,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "759f19c9-c56b-4400-8358-82ae22fc5694",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "37ad87a2-b5f7-47b0-a76e-e8ac34071454",
+          "title": "GET Users API",
+          "fullFile": "D:\\Muh Rafli Shofa _ Tugas Project Mini Bootcamp QA Engineer Digital Skola\\Sesi 7 - API Automation\\test\\getUsers.test.js",
+          "file": "\\test\\getUsers.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get users without token should be rejected",
+              "fullTitle": "GET Users API Get users without token should be rejected",
+              "timedOut": false,
+              "duration": 430,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\n  'https://belajar-bareng.onrender.com/api/users'\n);\nconst body = await response.json();\n// ASSERT 1: status code client error\nexpect(response.status).to.equal(401);\n// ASSERT 2: error message exists\nexpect(body).to.have.property('message');",
+              "err": {},
+              "uuid": "f625f645-120d-43b3-a4dc-dd91eeea989b",
+              "parentUUID": "37ad87a2-b5f7-47b0-a76e-e8ac34071454",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f625f645-120d-43b3-a4dc-dd91eeea989b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 430,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "835b40ba-9f55-4534-a20c-32ea9f7e7ccb",
+          "title": "POST Login Negative",
+          "fullFile": "D:\\Muh Rafli Shofa _ Tugas Project Mini Bootcamp QA Engineer Digital Skola\\Sesi 7 - API Automation\\test\\postLoginNegative.test.js",
+          "file": "\\test\\postLoginNegative.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login failed - wrong password",
+              "fullTitle": "POST Login Negative Login failed - wrong password",
+              "timedOut": false,
+              "duration": 676,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\n  'https://belajar-bareng.onrender.com/api/login',\n  {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({\n      username: 'admin',\n      password: ''\n    })\n  }\n);\nconst body = await response.json();\nexpect(response.status).to.equal(400);\nexpect(body).to.have.property('message');",
+              "err": {},
+              "uuid": "e66f0573-3885-49e7-8791-fb78aaff5b91",
+              "parentUUID": "835b40ba-9f55-4534-a20c-32ea9f7e7ccb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e66f0573-3885-49e7-8791-fb78aaff5b91"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 676,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b401c500-1cd9-4d25-a7f8-a4b1b547c32c",
+          "title": "POST Login Positive",
+          "fullFile": "D:\\Muh Rafli Shofa _ Tugas Project Mini Bootcamp QA Engineer Digital Skola\\Sesi 7 - API Automation\\test\\postLoginPositive.test.js",
+          "file": "\\test\\postLoginPositive.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login success",
+              "fullTitle": "POST Login Positive Login success",
+              "timedOut": false,
+              "duration": 321,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\n  'https://belajar-bareng.onrender.com/api/login',\n  {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({\n      username: 'admin',\n      password: 'admin'\n    })\n  }\n);\nconst body = await response.json();\nexpect(response.status).to.equal(200);\nexpect(body).to.have.property('message');",
+              "err": {},
+              "uuid": "536bbd78-53f2-4f12-88b1-8567fedcb3ac",
+              "parentUUID": "b401c500-1cd9-4d25-a7f8-a4b1b547c32c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "536bbd78-53f2-4f12-88b1-8567fedcb3ac"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 321,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report",
+        "reportFilename": "report"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
